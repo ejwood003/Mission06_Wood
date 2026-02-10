@@ -1,4 +1,7 @@
-﻿@model ErrorViewModel
+@* Ethan Wood - Section 2 *@
+@* Error.cshtml - Shown when an unhandled exception occurs; displays request ID and development-mode guidance *@
+
+@model ErrorViewModel
 @{
     ViewData["Title"] = "Error";
 }
@@ -6,6 +9,7 @@
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 
+@* Show the request ID when available (helps with debugging) *@
 @if (Model.ShowRequestId)
 {
     <p>

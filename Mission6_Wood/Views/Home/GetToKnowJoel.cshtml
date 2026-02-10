@@ -1,75 +1,25 @@
-@model Mission6_Wood.Models.Movie
+@* Ethan Wood - Section 2 *@
+@* GetToKnowJoel.cshtml - Page with links to Quick Wits Comedy and Baconsale; image links to Baconsale *@
 
 @{
-    ViewData["Title"] = "Add Movie";
+    ViewData["Title"] = "Get To Know Joel";
 }
 
-<h1>Add a movie to the collection</h1>
+<h1>Find out more about Joel!</h1>
 
-<form method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    
-    <div class="mb-3">
-        <label asp-for="Category" class="form-label">Category</label>
-        <input asp-for="Category" class="form-control" required/>
-        <span asp-validation-for="Category" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="Title" class="form-label">Title</label>
-        <input asp-for="Title" class="form-control" required/>
-        <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="Year" class="form-label">Year</label>
-        <input asp-for="Year" type="number" class="form-control" required/>
-        <span asp-validation-for="Year" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="Director" class="form-label">Director</label>
-        <input asp-for="Director" class="form-control" required/>
-        <span asp-validation-for="Director" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="Rating" class="form-label">Rating</label>
-        <select asp-for="Rating" class="form-control" required>
-            <option value="">-- Select Rating --</option>
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
-        </select>
-        <span asp-validation-for="Rating" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="Edited" class="form-label">Edited</label>
-        <select asp-for="Edited" class="form-control">
-            <option value="">-- Select --</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select>
-        <span asp-validation-for="Edited" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="LentTo" class="form-label">Lent to</label>
-        <input asp-for="LentTo" class="form-control"/>
-        <span asp-validation-for="LentTo" class="text-danger"></span>
-    </div>
-    
-    <div class="mb-3">
-        <label asp-for="Notes" class="form-label">Notes</label>
-        <input asp-for="Notes" class="form-control" maxlength="25"/>
-        <span asp-validation-for="Notes" class="text-danger"></span>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+@* Link to Quick Wits Comedy (where Joel performs regularly) *@
+<p>
+    <a href="https://www.qwcomedy.com/" target="_blank">Quick Wits Comedy</a>
+</p>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+@* Link to Baconsale site *@
+<p>
+    <a href="https://baconsale.com/" target="_blank">Baconsale</a>
+</p>
+
+@* Baconsale image that also links to Baconsale when clicked *@
+<p>
+    <a href="https://baconsale.com/" target="_blank">
+        <img src="~/img/BaconsaleKate.jpg" alt="Baconsale Kate" />
+    </a>
+</p>
