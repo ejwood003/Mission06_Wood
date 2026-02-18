@@ -55,4 +55,11 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
+    public IActionResult Collection()
+    {
+        var movies = _context.Movies.ToList();
+        
+        return View(movies);
+    }
 }

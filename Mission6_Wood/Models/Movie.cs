@@ -2,6 +2,7 @@
 // Movie.cs - Model representing a single movie in the collection (maps to Movies table)
 
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission6_Wood.Models;
 
@@ -13,7 +14,9 @@ public class Movie
 
     // Required field: category of the film (e.g. Comedy, Drama, Family)
     [Required(ErrorMessage = "Category is required")]
-    public string Category { get; set; } = "";
+    [ForeignKey("CategoryID")]
+    public int CategoryID { get; set; }
+    public Category Category { get; set; }
     
     // Required field: title of the movie
     [Required(ErrorMessage = "Title is required")]
@@ -21,18 +24,22 @@ public class Movie
     
     // Required field: release year (nullable type for model binding with optional form value)
     [Required(ErrorMessage = "Year is required")]
-    public int? Year { get; set; }
+    [Range(1888, 10000, ErrorMessage = "Year cannot be before 1888")]
+    public int Year { get; set; }
     
-    // Required field: director name(s)
-    [Required(ErrorMessage = "Director is required")]
+    // Optional field: director name(s)
     public string Director { get; set; } = "";
     
-    // Required field: rating (e.g. G, PG, PG-13, R)
-    [Required(ErrorMessage = "Rating is required")]
+    // Optional field: rating (e.g. G, PG, PG-13, R)
     public string Rating { get; set; } = "";
     
-    // Optional: whether the movie was edited (yes/no); stored as true/false in database
-    public bool? Edited { get; set; }
+    // Required: whether the movie was edited (yes/no); stored as true/false in database
+    [Required(ErrorMessage = "Please enter whether the movie was edited or not")]
+    public bool Edited { get; set; }
+    
+    // Require: whether the movie was copied to plex; stored as true/false
+    [Required(ErrorMessage = "Please enter whether the movie was copied to plex or not")]
+    public bool CopiedToPlex { get; set; }
     
     // Optional: person the movie was lent to, if any
     public string? LentTo { get; set; }
