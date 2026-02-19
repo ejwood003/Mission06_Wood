@@ -1,6 +1,8 @@
 @* Ethan Wood - Section 2 *@
 @* _ViewImports.cshtml - Global imports for all Razor views; namespaces and tag helpers available in every view *@
 
+@* Project and model namespaces so views can use types without full qualification *@
 @using Mission6_Wood
 @using Mission6_Wood.Models
+@* Enable ASP.NET Core tag helpers (e.g. asp-for, asp-controller, asp-action) in all views *@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

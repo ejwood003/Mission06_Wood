@@ -16,9 +16,11 @@ public class AddedMovieContext : DbContext
     // DbSet represents the Movies table; used to query and add movies
     public DbSet<Movie> Movies { get; set; }
     
-    public DbSet<Category> Majors { get; set; }
+    // DbSet represents the Categories table; used for dropdowns and movie category lookup
+    public DbSet<Category> Categories { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder) //Seed data
+    // Seed the Categories table with initial category options (runs on first migration)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>().HasData(
             

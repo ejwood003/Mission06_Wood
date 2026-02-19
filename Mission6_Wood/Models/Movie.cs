@@ -12,11 +12,10 @@ public class Movie
     [Key]
     public int MovieId { get; set; }
 
-    // Required field: category of the film (e.g. Comedy, Drama, Family)
-    [Required(ErrorMessage = "Category is required")]
+    // Optional: category of the film (e.g. Comedy, Drama, Family)
     [ForeignKey("CategoryID")]
-    public int CategoryID { get; set; }
-    public Category Category { get; set; }
+    public int? CategoryID { get; set; }
+    public Category? Category { get; set; }
     
     // Required field: title of the movie
     [Required(ErrorMessage = "Title is required")]
@@ -28,16 +27,16 @@ public class Movie
     public int Year { get; set; }
     
     // Optional field: director name(s)
-    public string Director { get; set; } = "";
+    public string? Director { get; set; } = "";
     
     // Optional field: rating (e.g. G, PG, PG-13, R)
-    public string Rating { get; set; } = "";
+    public string? Rating { get; set; }
     
     // Required: whether the movie was edited (yes/no); stored as true/false in database
     [Required(ErrorMessage = "Please enter whether the movie was edited or not")]
     public bool Edited { get; set; }
     
-    // Require: whether the movie was copied to plex; stored as true/false
+    // Required: whether the movie was copied to plex; stored as true/false in database
     [Required(ErrorMessage = "Please enter whether the movie was copied to plex or not")]
     public bool CopiedToPlex { get; set; }
     

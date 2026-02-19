@@ -1,0 +1,19 @@
+@* Ethan Wood - Section 2 *@
+@* Delete.cshtml - Confirmation page before removing a movie; posts to HomeController.Delete(Movie) *@
+
+@model Movie
+
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+@* Show which movie will be deleted *@
+<h2>Confirm Deletion</h2>
+<h3>@Model.Title, @Model.Year</h3>
+
+@* Form posts MovieId so the controller can load and remove the correct record *@
+<form method="post">
+    <input type="hidden" asp-for="MovieId"/>
+    <button type="submit" class="btn btn-outline-danger">Delete</button>
+    <a class="btn btn-info" asp-controller="Home" asp-action="Collection">Cancel</a>
+</form>

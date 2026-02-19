@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Mission6_Wood</title>
     <script type="importmap"></script>
-    @* Bootstrap and app stylesheets *@
+    @* Stylesheets: Bootstrap (layout/components), site.css (app overrides), scoped styles *@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/Mission6_Wood.styles.css" asp-append-version="true"/>
 </head>
 <body>
 <header>
-    @* Top navigation bar with brand and links to Home, Get to Know Joel, Add Movie *@
+    @* Top navigation: brand, collapse toggle (mobile), and nav links (Home, Get to Know Joel, Add Movie, View Collection) *@
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Mission6_Wood</a>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Mission07_Wood</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,6 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Add">Add Movie</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Collection">View Collection</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -46,12 +49,13 @@
     </main>
 </div>
 
+@* Footer: copyright and app name *@
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2026 - Mission6_Wood
+        &copy; 2026 - Mission07_Wood
     </div>
 </footer>
-@* jQuery, Bootstrap JS, and app script; Scripts section allows views to add their own scripts (e.g. validation) *@
+@* Scripts: jQuery, Bootstrap bundle (dropdowns/collapse), site.js; optional Scripts section for view-specific scripts (e.g. validation) *@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>

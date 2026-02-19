@@ -1,5 +1,7 @@
 @* Ethan Wood - Section 2 *@
-@* _ValidationScriptsPartial.cshtml - Client-side validation scripts; include in views that have forms (e.g. Add.cshtml) *@
+@* _ValidationScriptsPartial.cshtml - Client-side validation scripts; include via @section Scripts in views that have forms (e.g. Add.cshtml) *@
 
+@* jQuery Validate: validates form fields based on data-val-* attributes generated from model attributes *@
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+@* Unobtrusive: wires jQuery Validate to ASP.NET Core's validation attributes (Required, Range, etc.) *@
 <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>

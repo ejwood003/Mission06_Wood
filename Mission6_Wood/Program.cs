@@ -4,10 +4,11 @@
 using Mission6_Wood.Models;
 using Microsoft.EntityFrameworkCore;
 
+// ---------- Service configuration ----------
 // Build the web application host and load configuration (appsettings.json, environment variables, etc.)
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Register framework and app services for dependency injection.
 // AddControllersWithViews registers MVC with views (Razor) for the dependency injection container
 builder.Services.AddControllersWithViews();
 
@@ -18,10 +19,10 @@ builder.Services.AddDbContext<AddedMovieContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:MovieConnection"]);
 });
 
-// Build the application pipeline
+// ---------- Application build and pipeline ----------
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline (middleware order matters).
 // In non-Development environments, use the global exception handler and HSTS for security
 if (!app.Environment.IsDevelopment())
 {
